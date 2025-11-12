@@ -10,7 +10,7 @@ interface Props {
 export const Navbar = ({ cart }: Props) => {
 
     return (
-        <nav className="flex justify-between m-3 bg-gray-50 p-5 rounded-lg border-2 border-gray-100 mx-10">
+        <nav className="flex justify-between mt-1 bg-gray-50 p-5 rounded-lg border-2 border-gray-100 mx-10">
             <h1 className="flex flex-row gap-2">
                 <StoreIcon />
                 Ecommerce Cart

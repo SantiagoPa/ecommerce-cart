@@ -7,14 +7,14 @@ function App() {
   const { products, cart, query, handleInputChange, onAddCart } = useCart();
 
   return (
-    <main className='mx-10 p-2'>
+    <main className='mx-10 px-2'>
       <Navbar cart={cart} />
       <section className='bg-gray-50 mx-10 p-2'>
         <input 
           value={query} 
           onChange={({ target }) => handleInputChange(target.value)} 
           type="text" 
-          placeholder='buscar productos' 
+          placeholder='buscar productos...' 
           className='mx-4 border-2 border-slate-800 rounded-lg px-2 min-w-1/4' 
         />
         <div className='flex flex-row'>
