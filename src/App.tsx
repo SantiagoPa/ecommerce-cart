@@ -7,13 +7,21 @@ function App() {
   const { products, cart, query, handleInputChange, onAddCart } = useCart();
 
   return (
-    <main>
+    <main className='mx-10 p-2'>
       <Navbar cart={cart} />
-      <input value={query} onChange={({ target }) => handleInputChange(target.value)} type="text" placeholder='buscar productos' className='mx-4 border-zinc-100' />
-      <div className='flex flex-row'>
-        <ProductList products={products} onAddCart={onAddCart} />
-        <CartList cart={cart} />
-      </div>
+      <section className='bg-gray-50 mx-10 p-2'>
+        <input 
+          value={query} 
+          onChange={({ target }) => handleInputChange(target.value)} 
+          type="text" 
+          placeholder='buscar productos' 
+          className='mx-4 border-2 border-slate-800 rounded-lg px-2 min-w-1/4' 
+        />
+        <div className='flex flex-row'>
+          <ProductList products={products} onAddCart={onAddCart} />
+          <CartList cart={cart} />
+        </div>
+      </section>
     </main>
   )
 }

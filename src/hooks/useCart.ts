@@ -11,7 +11,8 @@ export interface StateCart {
 }
 
 const onInitState = () => {
-    return JSON.parse(localStorage.getItem("cart") || '{"prodtucts":[]}');
+    const cart = JSON.parse(localStorage.getItem("cart") || '{"products":[]}');
+    return cart;
 }
 
 export const useCart = () => {
