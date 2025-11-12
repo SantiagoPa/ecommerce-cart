@@ -15,7 +15,7 @@ export const CartList = () => {
                 <StoreIcon />
                 <h2 className=" text-lg font-bold">Mi Carrito</h2>
             </div>
-            <div className="flex flex-col justify-center gap-2">
+            <div className="flex flex-col justify-items-start gap-2 h-[60vh] overflow-y-auto">
                 {
                     cart.products.map((product) => (
                         <CartItem product={product} />
