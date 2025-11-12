@@ -1,6 +1,6 @@
 import { MinusIcon, PlusIcon } from "lucide-react";
-import type { CartItem as ICartItem } from "../hooks/useCart";
 import { formatPrice } from "../utils/formatPrice";
+import type { CartItem as ICartItem } from "../context/StoreProvider";
 
 
 interface Props {

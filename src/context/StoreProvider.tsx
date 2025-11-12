@@ -30,7 +30,7 @@ export const StoreProvider = ({ children }: Props) => {
         setCart((prev) => {
             const findProdut = prev.products.find((prod) => prod.id === product.id);
             if (findProdut) {
-                const newState = { products: [...prev.products, { ...findProdut, quantity: findProdut.quantity += 1 }] }
+                const newState = { products: [...prev.products.map((prod)=>prod.id === findProdut.id ? {...findProdut, quantity: findProdut.quantity += 1} : prod)] }
                 localStorage.setItem('cart', JSON.stringify(newState));
                 return newState;
             } else {
