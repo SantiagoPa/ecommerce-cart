@@ -1,6 +1,7 @@
 import { StoreIcon } from "lucide-react";
 import { CartItem } from "./CartItem";
 import { useCart } from "../hooks/useCart";
+import { CartFooter } from "./CartFooter";
 
 
 
@@ -21,6 +22,7 @@ export const CartList = () => {
                     ))
                 }
             </div>
+            <CartFooter />
         </article>
     )
 }

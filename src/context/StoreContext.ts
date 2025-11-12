@@ -7,10 +7,12 @@ export interface StoreContextProps {
     query: string;
     products: Product[];
     toast: StateToast;
+    totalItems: number;
+    totalPrices: number;
     onAddCart: (product: Product) => void;
     handleInputChange: (query: string) => void;
     onMinusItemQuantity: (product: Product) => void;
-    onPlusItemQuantity: (product: Product, isButtonCard?:boolean) => void;
+    onPlusItemQuantity: (product: Product, isButtonCard?: boolean) => void;
     onToast: (toast: StateToast) => void;
 }
 

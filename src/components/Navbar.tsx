@@ -2,11 +2,12 @@ import { Activity } from "react";
 
 import { StoreIcon } from "lucide-react"
 import { useCart } from "../hooks/useCart";
+import { formatPrice } from "../utils/formatPrice";
 
 
 export const Navbar = () => {
 
-    const { cart } = useCart();
+    const { totalItems, totalPrices } = useCart();
 
     return (
         <nav className="flex justify-between mt-1 bg-gray-50 p-5 rounded-lg border-2 border-gray-100 mx-10">
@@ -17,9 +18,9 @@ export const Navbar = () => {
             <button className="px-2 bg-blue-500 text-white rounded-md min-w-1/5 flex flex-row justify-center gap-3 py-2">
                 <StoreIcon />
                 Carrito
-                <Activity mode={cart.products.length > 0 ? "visible" : "hidden"}>
+                <Activity mode={totalItems > 0 ? "visible" : "hidden"}>
                     <span>
-                        ({cart.products.length}) - ${cart.products.reduce((acc, el) => acc += el.price, 0)}
+                        ({totalItems}) - {formatPrice(totalPrices)}
                     </span>
                 </Activity>
             </button>

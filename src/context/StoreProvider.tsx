@@ -1,4 +1,4 @@
-import { useState, type ReactElement } from "react";
+import { useMemo, useState, type ReactElement } from "react";
 import type { Product } from "../types/product.type";
 import { PRODUCTS } from "../data/mockData";
 import { StoreContext } from "./StoreContext";
@@ -69,7 +69,7 @@ export const StoreProvider = ({ children }: Props) => {
         });
     }
 
-    const onPlusItemQuantity = (product: Product, isButtonCard?:boolean) => {
+    const onPlusItemQuantity = (product: Product, isButtonCard?: boolean) => {
         setCart((prev) => {
             const findProdut = prev.products.find((prod) => prod.id === product.id);
             if (!findProdut) return prev
@@ -94,6 +94,21 @@ export const StoreProvider = ({ children }: Props) => {
         }, 4000)
     }
 
+    const totalItems = useMemo(() => {
+        if (cart.products.length === 0) return 0;
+        return cart.products.reduce((acc, el) => acc += el.quantity, 0);
+    }, [cart.products])
+
+    const totalPrices = useMemo(() => {
+        if (cart.products.length === 0) return 0;
+        return cart.products.reduce((acc, el) => {
+            acc += el.price * el.quantity;
+            return acc;
+        }, 0);
+    }, [cart.products]);
+
+
+
     return (
         <StoreContext
             value={{
@@ -101,6 +116,8 @@ export const StoreProvider = ({ children }: Props) => {
                 query,
                 products,
                 toast,
+                totalItems,
+                totalPrices,
                 onAddCart,
                 onMinusItemQuantity,
                 handleInputChange,
