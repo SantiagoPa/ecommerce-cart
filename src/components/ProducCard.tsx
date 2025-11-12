@@ -11,7 +11,7 @@ interface Props {
 
 export const ProducCard = ({ product }: Props) => {
 
-    const { cart, onAddCart } = useCart();
+    const { cart, onAddCart, onPlusItemQuantity } = useCart();
 
     const isProductInCart = useMemo(() => {
         return Boolean(cart.products.find((prod) => prod.id === product.id));
@@ -34,6 +34,7 @@ export const ProducCard = ({ product }: Props) => {
             </Activity>
             <Activity mode={isProductInCart ? "visible" : "hidden"}>
                 <button className="flex gap-2 bg-red-600 text-white w-32 rounded-md justify-center cursor-pointer hover:bg-red-500/80 py-1 disabled"
+                onClick={()=>onPlusItemQuantity(product, true)}
                 >
                     <StoreIcon />
                     <span>

@@ -8,9 +8,9 @@ export const ProductList = () => {
     const { products } = useCart();
 
   return (
-    <section className='flex-2 mt-10 mx-10'>
+    <section className='sm:mx-0 md:mx-5 lg:mt-10 lg:mx-10 col-span-2'>
         <h3 className='text-xl text-gray-950'>Productos disponibles</h3>
-        <div className='grid grid-cols-3 gap-5'>
+        <div className='grid  sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5'>
             {
                 products.map((product)=>(
                     <ProducCard  key={product.id} product={product} />
