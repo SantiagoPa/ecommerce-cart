@@ -1,13 +1,12 @@
 import { Activity } from "react";
 
 import { StoreIcon } from "lucide-react"
-import { type StateCart } from "../hooks/useCart"
+import { useCart } from "../hooks/useCart";
 
-interface Props {
-    cart: StateCart;
-}
 
-export const Navbar = ({ cart }: Props) => {
+export const Navbar = () => {
+
+    const { cart } = useCart();
 
     return (
         <nav className="flex justify-between mt-1 bg-gray-50 p-5 rounded-lg border-2 border-gray-100 mx-10">

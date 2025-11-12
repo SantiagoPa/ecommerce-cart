@@ -1,15 +1,16 @@
 import { PlusIcon } from "lucide-react"
 import type { Product } from "../types/product.type"
 import { formatPrice } from "../utils/formatPrice";
+import { useCart } from "../hooks/useCart";
 
 
 interface Props {
     product: Product
-    onAddCart: (prodcut: Product) => void;
 }
 
-export const ProducCard = ({ product, onAddCart }: Props) => {
+export const ProducCard = ({ product }: Props) => {
 
+    const { onAddCart } = useCart();
 
 
     return (

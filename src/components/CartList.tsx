@@ -1,12 +1,13 @@
 import { StoreIcon } from "lucide-react";
-import type { StateCart } from "../hooks/useCart";
 import { CartItem } from "./CartItem";
+import { useCart } from "../hooks/useCart";
 
-interface Props {
-    cart: StateCart;
-}
 
-export const CartList = ({ cart }: Props) => {
+
+export const CartList = () => {
+
+    const { cart } = useCart();
+
     return (
         <article className="flex-1 bg-white">
             <div className=" flex flex-row bg-gray-50 p-2 border-2 border-gray-100 rounded-md mb-5">
