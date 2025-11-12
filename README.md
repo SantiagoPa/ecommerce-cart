@@ -2,6 +2,6 @@
 
 Steps to run app
 
-1. clone repository ``
-2. install dependencies ``
-3. running mode dev ``
+1. clone repository `git clone https://github.com/SantiagoPa/ecommerce-cart.git`
+2. install dependencies `npm install`
+3. running mode dev `npm run dev`
